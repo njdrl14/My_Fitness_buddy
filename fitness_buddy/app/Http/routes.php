@@ -40,8 +40,10 @@ Route::post('/meal', function (Request $request) {
 	return redirect('/');
 });
 
-Route::delete('/meal/{meal}', function () {
+Route::delete('/meal/{meal}', function (Meal $meal) {
     //
+   $meal->delete();
+   return redirect('/');
 });
 
 

@@ -40,6 +40,13 @@
 						@foreach ($meals as $meal)
 							<tr>
 								<td>{{ $meal->name }}</td>
+								<td>
+									<form action="{{ url('meal/'. $meal->id) }}" method="post">
+									<button type="submit" class="btn btn-danger">Delete</button>
+									{{ method_field('DELETE') }}
+									{{ csrf_field() }}
+									</form>
+								</td>
 							</tr>
 						@endforeach
 			</div>
